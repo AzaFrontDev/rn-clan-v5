@@ -1,0 +1,12 @@
+/* css/main.css */
+
+@import "./modules/global.css";
+@import "./modules/header.css";
+@import "./modules/achievements.css";
+@import "./modules/cards-and-banners.css";
+@import "./modules/rules.css";
+@import "./modules/wiki.css";
+@import "./modules/footer.css";
+
+/* Адаптив всегда в конце */
+@import "./modules/media-queries.css";

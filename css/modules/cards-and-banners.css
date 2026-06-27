@@ -1,0 +1,356 @@
+.roster-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-bottom: 80px;
+}
+
+.roster-list__item {
+  flex: 0 1 370px; 
+  min-width: 280px;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 1);
+  max-width: 370px;
+  height: 420px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 10px 20px 0px rgba(190, 33, 222, 0.6);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(190, 33, 222);
+}
+
+.info-card__image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.info-card__content {
+  padding: 25px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.info-card__tag {
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.info-card__note {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.info-card__link {
+  font-weight: 400;
+  font-size: 15px; 
+  line-height: 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin: auto auto 0;
+}
+
+.banner {
+  background-size: cover;
+  height: 400px; 
+  max-width: 1200px;
+  width: 100%;
+  border-radius: 20px;
+  margin: 0 auto 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-shadow: 0px 10px 20px 0px rgba(190, 33, 222, 0.6);
+}
+
+.banner__link {
+  background-color: rgb(25, 143, 11);
+  color: #fff;
+  text-decoration: none;
+  width: 220px; 
+  height: 56px; 
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bold;  
+  
+  /* ВОТ ЭТУ СТРОКУ ДОБАВЬ ДЛЯ ПЛАВНОСТИ */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Ховер для кнопки "Узнать тонкости" */
+.banner__link:hover {
+  transform: translateY(-4px); /* Слегка приподнимаем кнопку */
+  background-color: rgb(35, 180, 15); /* Делаем зелёный цвет ярче */
+  
+  /* Плотный зелёный неоновый свет вокруг кнопки */
+  box-shadow: 0px 8px 25px 0px rgba(35, 180, 15, 0.8); 
+}
+
+
+.banner--main {
+  background-image: url("https://i.pinimg.com/1200x/97/cd/d7/97cdd722d2a60d98ec744802615acb60.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: RGB(192,192,192);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  box-sizing: border-box;
+  min-height: 350px;
+  border-left: 10px solid rgba(25, 143, 11);  
+}
+
+.banner--main h2,
+.banner--main p {
+  max-width: 50%;                   /* Текст занимает только левую половину баннера */
+  text-align: left;                 /* Выравнивание по левому краю для стиля */
+}
+
+.banner--main h2 {
+  color: rgba(25, 143, 11);         /* Зеленый под цвет твоей борды, раз уж пошел такой визуал */
+  margin-bottom: 15px;
+}
+
+.banner--second p {
+  color: rgb(190, 33, 222);                   /* На белом фоне черный текст будет читаться идеально */
+  margin-bottom: 20px;
+}
+
+.banner--second {
+  background-image: url("https://i.pinimg.com/736x/97/d5/24/97d524a6d5b1b655af35c704426f2583.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;         /* Картинка не будет сжиматься или резаться */
+  background-position: right center; /* На ПК намертво прижимаем Гароу к правому краю */
+  background-color: #ffffff;        /* Фон самого баннера белый, под цвет манги, чтобы слева не было дыры */
+  border-left: 10px solid rgba(25, 143, 11);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;          /* Выравниваем текст по левому краю */
+  padding: 40px;                    /* Отступы внутри баннера, чтобы текст не лип к краям */
+  box-sizing: border-box;
+  min-height: 350px;                /* Задай адекватную высоту баннера, чтобы Гароу влез по вертикали */
+}
+
+/* Ограничиваем ширину текстового блока, чтобы он не налезал на Гароу справа */
+.banner--second h2,
+.banner--second p {
+  max-width: 50%;                   /* Текст занимает только левую половину баннера */
+  text-align: left;                 /* Выравнивание по левому краю для стиля */
+}
+
+.banner--second h2 {
+  color: rgba(25, 143, 11);         /* Зеленый под цвет твоей борды, раз уж пошел такой визуал */
+  margin-bottom: 15px;
+}
+
+.banner--second p {
+  color: rgb(190, 33, 222);                   /* На белом фоне черный текст будет читаться идеально */
+  margin-bottom: 20px;
+}
+
+/* === БАЗОВЫЙ КОНТЕЙНЕР БАННЕРА === */
+.banner--allies {
+  position: relative;      
+  overflow: hidden;        
+  background: url('https://i.pinimg.com/736x/98/9d/69/989d693871078393725a3e1d96d37162.jpg') no-repeat center;
+  background-size: cover;
+  height: 400px; 
+  max-width: 1200px;
+  width: 100%;
+  border-radius: 20px;
+  margin: 0 auto 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 30px 0px rgba(190, 33, 222, 0.3);
+  transition: box-shadow 0.5s ease;
+}
+
+.banner--allies:hover {
+  box-shadow: 0px 15px 40px 0px rgba(190, 33, 222, 0.6);
+}
+
+/* === СЛОЙ ВЫРЕЗАННЫХ ЗРАЧКОВ + ИСКУССТВЕННЫЙ ЗОЛОТОЙ НЕОН === */
+.banner__eyes {
+  position: absolute;
+  width: 150px; 
+  height: 70px;
+  background-image: url('https://i.ibb.co/PZm9h6m7/989d693871078393725a3e1d96d37162.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;    
+  z-index: 3; 
+  opacity: 0;
+  
+  /* Убираем чёрный фон, оставляем только родное золото */
+  mix-blend-mode: screen; 
+  transition: opacity 0.4s ease;
+
+  /* Точные координаты посадки на лицо */
+  top: 36.5%;  
+  left: 50.8%;
+}
+
+/* При ховере включаем жёсткую золотую пульсацию */
+.banner--allies:hover .banner__eyes {
+  opacity: 1;
+  animation: trueEyeGlow 1.5s infinite ease-in-out;
+}
+
+/* === МАТЕМАТИКА ЗОЛОТОГО СВЕЧЕНИЯ === */
+@keyframes trueEyeGlow {
+  0% {
+    /* brightness увеличивает силу родного золота */
+    filter: brightness(2) contrast(1.2);
+  }
+  50% {
+    /* В пике мы не просто выжигаем пиксели, а заставляем их светиться золотым пламенем */
+    filter: brightness(5) contrast(2) saturate(2);
+  }
+  100% {
+    filter: brightness(2) contrast(1.2);
+  }
+}
+
+/* === СЛОЙ ВОЛОС === */
+.banner__hair {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.pinimg.com/736x/98/9d/69/989d693871078393725a3e1d96d37162.jpg');
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;    
+  z-index: 1;              
+  transform-origin: top center;
+}
+
+.banner--allies:hover .banner__hair {
+  animation: hairSway 4s infinite ease-in-out;
+}
+
+/* === КОНТЕНТ БАННЕРА === */
+.banner__title, 
+.banner__text, 
+.banner__link {
+  position: relative;
+  z-index: 2;              
+}
+
+.banner__title {
+  color: rgba(25, 143, 11);
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  max-width: 50%;                   
+  text-align: left;
+}
+
+.banner__text {
+  color: rgb(190, 33, 222);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  max-width: 50%;                   
+  text-align: left;
+}
+
+.banner--allies .banner__link {
+  background-color: rgb(190, 33, 222);
+  color: #fff;
+  text-decoration: none;
+  width: 220px; 
+  height: 56px; 
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(190, 33, 222, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.banner--allies .banner__link:hover {
+  transform: translateY(-4px); 
+  background-color: rgb(150, 20, 180);
+  box-shadow: 0px 8px 25px 0px rgba(190, 33, 222, 0.8); 
+}
+
+/* === АНИМАЦИИ === */
+
+/* Чистое неоновое свечение, обтекающее только вырезанные пиксели зрачков */
+@keyframes trueEyeGlow {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 2px rgba(255, 215, 0, 0.5));
+  }
+  50% {
+    filter: brightness(2) drop-shadow(0 0 14px rgba(255, 165, 0, 1)) drop-shadow(0 0 4px rgba(255, 69, 0, 0.8));
+  }
+  100% {
+    filter: brightness(1) drop-shadow(0 0 2px rgba(255, 215, 0, 0.5));
+  }
+}
+
+@keyframes hairSway {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.015) rotate(0.4deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.footer {
+  background-color: #242424;
+  padding: 40px 0;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__phone {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.footer__social-list {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}

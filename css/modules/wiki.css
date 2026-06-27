@@ -1,0 +1,96 @@
+/* === ИСПРАВЛЕННЫЕ СТИЛИ ДЛЯ WIKI.HTML === */
+
+.wiki-content {
+  background-color: #0d0d11; /* Убедись, что фон страницы темный */
+  padding: 120px 0 80px 0;   /* Увеличили верхний отступ, чтобы заголовок вылез из-под хедера */
+  min-height: 100vh;
+  font-family: 'Tenor Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Главный заголовок страницы — ЖЁСТКО ДЕЛАЕМ БЕЛЫМ */
+.wiki-content__title {
+  color: #ffffff !important; /* Принудительно белый цвет, чтобы не сливался */
+  font-size: 42px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 60px;
+  text-align: center;
+  text-shadow: 0 0 20px rgba(190, 33, 222, 0.6);
+}
+
+/* Сетка списка — исправляем баг с пропаданием карточек */
+.wiki {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 30px;
+  width: 100%; /* Растягиваем сетку на всю ширину контейнера */
+}
+
+/* Сама карточка чела */
+.wiki__item {
+  background: #000000 !important; 
+  border: 1px solid rgba(190, 33, 222, 0.3) !important; 
+  border-radius: 16px;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              border-color 0.4s ease, 
+              box-shadow 0.4s ease;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease, transform 0.4s ease, border-color 0.5s ease;
+}
+
+.highlight-target {
+    background-color: rgba(190, 33, 222, 0.12) !important; /* Легкий фиолетовый фон внутри */
+    box-shadow: 0 0 25px rgba(190, 33, 222, 0.6) !important;  /* Неоновое фиолетовое свечение */
+    border-color: rgb(190, 33, 222) !important;               /* Рамка становится яркой */
+    transform: scale(1.03);                                   /* Карточка слегка увеличивается, как при hover */
+}
+
+/* Текст внутри карточки — ДЕЛАЕМ ЧИТАЕМЫМ */
+.wiki__name {
+  color: #ffffff !important; 
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.wiki__text {
+  color: #e0e0e0 !important; /* Светло-серый текст, чтобы его было видно */
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+.wiki__note {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: rgba(190, 33, 222, 0.2);
+  color: #be21de !important;
+  border: 1px solid rgba(190, 33, 222, 0.4);
+}
+
+/* Кастом для Hinderon */
+.wiki__item:nth-child(2) .wiki__note {
+  background: rgba(25, 143, 11, 0.15);
+  color: rgb(25, 143, 11) !important;
+  border-color: rgba(25, 143, 11, 0.4);
+}
+
+/* ХОВЕРЫ */
+.wiki__item:hover {
+  transform: translateY(-8px);
+  border-color: #be21de !important;
+  box-shadow: 0 15px 35px 0 rgba(25, 143, 11, 0.4);
+}
+
+.wiki__item:nth-child(2):hover {
+  border-color: rgb(25, 143, 11) !important;
+  box-shadow: 0 15px 35px 0 rgba(25, 143, 11, 0.3);
+}

@@ -1,0 +1,246 @@
+/* Базовое окружение */
+body {
+  background: #050308;
+  color: rgb(25, 143, 11);
+  font-family: 'Tenor Sans', sans-serif;
+  margin: 0;
+}
+
+.container h1 {
+  color: rgb(190, 33, 222);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  /* Добавь это и заделай отступ побольше для теста */
+  margin-top: 120px !important; 
+  margin-bottom: 50px;
+}
+
+/* СЕТКА (Свойства из .roster-list) */
+.alliance-grid {
+  display: flex;
+  justify-content: center; /* Центрируем, так как осталось 3 карточки */
+  gap: 30px;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-bottom: 80px;
+}
+
+/* КАРТОЧКА (Свойства из .info-card + подгонка под темный фон) */
+.alliance-card {
+  background: #08080c; /* Тёмная база */
+  max-width: 370px;
+  height: 420px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 20px; /* Из твоего макета */
+  overflow: hidden;
+  box-shadow: 0px 10px 20px 0px rgba(190, 33, 222, 0.6); /* Твоя тень */
+  border: 1px solid rgb(190, 33, 222); /* Твой бордер */
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 370px; /* Из .roster-list__item */
+  min-width: 280px;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+/* Контент внутри карточки (Свойства из .info-card__content) */
+.alliance-card > div {
+  padding: 25px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Заголовки кланов */
+.alliance-card h3 {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  color: rgb(190, 33, 222);
+}
+
+/* Текстовые блоки (Свойства из .info-card__note) */
+.alliance-card p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 15px 0;
+  flex-grow: 1;
+  color: rgb(25, 143, 11); /* Твой зелёный */
+}
+
+/* Теги статусов (Свойства из .info-card__tag) */
+.status-badge {
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.status-warning {
+  color: #db9010;
+  font-weight: bold;
+}
+
+/* Дополнительные слоты данных */
+.data-slot {
+  font-size: 14px;
+  line-height: 20px;
+  color: rgb(25, 143, 11);
+  margin-top: 5px;
+  text-align: left;
+  background: rgba(190, 33, 222, 0.05);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(190, 33, 222, 0.2);
+}
+
+.data-label {
+  color: #555;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+
+/* СТИЛИ ДЛЯ ПУСТЫХ СЛОТОВ */
+.alliance-card.empty-slot {
+  border-style: dashed;
+  border-color: #222;
+  box-shadow: none;
+  background: rgba(8, 8, 12, 0.4);
+}
+
+.alliance-card.empty-slot h3 {
+  color: #444;
+}
+
+.alliance-card.empty-slot p {
+  color: #444;
+}
+
+.status-empty {
+  color: #444;
+}
+
+/* Интерактив при наведении на пустой слот */
+.alliance-card.empty-slot:hover {
+  border-style: solid;
+  border-color: rgb(190, 33, 222);
+  box-shadow: 0px 10px 20px 0px rgba(190, 33, 222, 0.3);
+}
+
+.alliance-card.empty-slot:hover h3 {
+  color: rgb(190, 33, 222);
+}
+
+.alliance-card.empty-slot:hover p {
+  color: rgb(25, 143, 11);
+}
+
+.alliance-card.empty-slot:hover .status-empty {
+  color: rgb(190, 33, 222);
+}
+
+/* Кнопка "Подробнее" на базе твоей .info-card__link */
+.open-details-btn {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 15px; 
+  line-height: 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin: auto auto 0;
+  color: rgb(190, 33, 222);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.open-details-btn:hover {
+  color: rgb(25, 143, 11);
+}
+
+.card-content-wrapper {
+  padding: 25px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: calc(100% - 220px); /* Вычитаем высоту картинки */
+  box-sizing: border-box;
+}
+
+/* МОДАЛЬНОЕ ОКНО АЛЬЯНСА */
+.alliance-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(5, 3, 8, 0.96);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.alliance-modal-content {
+  background: #08080c;
+  padding: 40px 30px;
+  border: 2px solid rgb(190, 33, 222);
+  max-width: 550px;
+  width: 100%;
+  color: rgb(25, 143, 11);
+  position: relative;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 20px; /* Твой радиус */
+  box-shadow: 0px 0px 20px 0px rgba(190, 33, 222, 0.4);
+}
+
+/* Выпиливаем уродский скроллбар из окна детальной инфы */
+.alliance-modal-content::-webkit-scrollbar {
+  display: none;
+}
+.alliance-modal-content {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 15px; right: 20px;
+  cursor: pointer;
+  font-size: 28px;
+  color: #444;
+  transition: color 0.2s;
+}
+
+.close-modal-btn:hover {
+  color: rgb(190, 33, 222);
+}
+
+/* Оформление инфы внутри модалки */
+.modal-clan-title {
+  color: rgb(190, 33, 222);
+  text-transform: uppercase;
+  border-bottom: 1px solid #1a1a24;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+.modal-section {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.modal-section h4 {
+  margin: 0 0 8px 0;
+  color: #db9010;
+  font-size: 14px;
+  text-transform: uppercase;
+}
