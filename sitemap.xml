@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Главная -->
+  <url>
+    <loc>https://rn-clan.ru/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Составы -->
+  <url>
+    <loc>https://rn-clan.ru/roster</loc>
+    <lastmod>2026-06-29</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Правила -->
+  <url>
+    <loc>https://rn-clan.ru/rules</loc>
+    <lastmod>2026-06-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- База Знаний -->
+  <url>
+    <loc>https://rn-clan.ru/wiki</loc>
+    <lastmod>2026-06-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Альянсы -->
+  <url>
+    <loc>https://rn-clan.ru/alliance</loc>
+    <lastmod>2026-06-29</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
