@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const response = await fetch('https://rn-telegram-bot1.onrender.com/api/apply', {
+                const response = await fetch('https://api.rn-clan.ru/api/apply',  {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(applicationData),
